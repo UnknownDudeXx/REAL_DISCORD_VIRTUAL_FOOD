@@ -5,7 +5,7 @@ import random
 import json
 import asyncio
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or("b."), description="A food delivery bot created by shadeyg56 made for delivering virtual breakfast food to your server")
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("b."), description="A food delivery bot for discord!")
 Alphabet = ["A", "a", "B", "b", "C", "c", "D", "d", "E", "e", "F", "f", "G", "g", "H", "h", "I", "i", "J", "j", "K", "k", "L", "l", "M", "m", "N", "n", "O", "o", "P", "p", "Q", "q", "R", "r", "S", "s", "T", "t", "U", "u", "V", "v", "W", "w", "X", "x", "Y", "y", "Z", "z"]
 
 
@@ -16,7 +16,7 @@ async def on_ready():
     print('THE BOT IS ONLINE')
     print('------------------------------------')
     print("Name: {}".format(bot.user.name))
-    print('Author: shadeyg56')
+    print('Author: Xx_Unknown_xX')
     print("ID: {}".format(bot.user.id))
     print('DV: {}'.format(discord.__version__))
     await bot.change_presence(activity=discord.Game(name="Huge Rewrite | b.help | b.order"))
@@ -45,7 +45,7 @@ async def order(ctx, *, item:str):
 	with open("data/orders.json") as f:
 		orders = json.load(f)
 	kitchen = bot.get_channel(366325015488233493)
-	await ctx.send("Please make sure your order is a legitamate breakfast item, otherwise it will be automatically deleted. Reply yes to continue or no to cancel")
+	await ctx.send("Please make sure your order is a legitamate food item, otherwise it will be automatically deleted. Reply yes to continue or no to cancel")
 	x = await bot.wait_for("message", check=lambda m: m.author == ctx.author)
 	if x.content == "yes":
 		id = random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet)
@@ -279,7 +279,7 @@ async def remove_worker(ctx, user: discord.Member, job:str=None):
 
 @bot.command()
 async def invite(ctx):
-	await ctx.send("**Breakfast Bro Invite**: https://discordapp.com/api/oauth2/authorize?client_id=366768341026734080&permissions=17409&scope=bot")
+	await ctx.send("**Discord Virtual Food Invite**: https://discordapp.com/api/oauth2/authorize?client_id=366768341026734080&permissions=17409&scope=bot")
 
 @bot.command()
 async def server(ctx):
