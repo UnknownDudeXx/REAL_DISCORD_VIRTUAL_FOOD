@@ -44,12 +44,12 @@ async def test(ctx):
 async def order(ctx, *, item:str):
 	with open("data/orders.json") as f:
 		orders = json.load(f)
-	kitchen = bot.get_channel(366325015488233493)
+	kitchen = bot.get_channel(765691415254138903)
 	await ctx.send("Please make sure your order is a legitamate food item, otherwise it will be automatically deleted. Reply yes to continue or no to cancel")
 	x = await bot.wait_for("message", check=lambda m: m.author == ctx.author)
 	if x.content == "yes":
 		id = random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet)
-		await ctx.send(f"Your order has been sent to the kitchen where are expert ninja cooks will deal with it! Your order id is {id}!")
+		await ctx.send(f"Your order has been sent to the kitchen! Your order id is {id}!")
 		embed = discord.Embed(title=f"New Order, ID: {id}", description=item)
 		embed.set_author(name=f"{ctx.author} | {ctx.author.id}")
 		embed.set_footer(text=f"From: {ctx.guild} | {ctx.guild.id}")
@@ -290,4 +290,5 @@ async def server(ctx):
 	
 
 
-bot.run(private.TOKEN)
+bot.run(private.NzY1Njk2NjU5OTg3MzY1ODk4.X4YklQ.xAyBMpKCcYHLb7kdeij5BmnqPKc
+)
